@@ -1,8 +1,7 @@
-
 /**
 	Dynamic Light Sources for ImpactJS (http://www.impactjs.com)
 
-	@version 0.10 - 2012-04-03
+	@version 0.11 - 2012-04-04
 	@author Marc Henklein ( @snooze82 )
 
 	@description
@@ -59,6 +58,19 @@ LightManager = ig.Class.extend({
 		this.lights.push(newLightSource);
 		return newLightSource;
 	},
+	removeLightByIndex: function(index) {
+		if (this.lights.length < index) {
+			this.lights.splice(index,1);
+		}
+	},
+	removeLight: function(light) {
+		for (var i=0; i<this.lights.length; i++) {
+			if (this.lights[i] == light) {
+				this.lights.splice(i,1);
+				break;
+			}
+		}
+	},
 	shine: function() {
 		this.drawShadowMap();
 		this.drawLightMap();
@@ -94,7 +106,6 @@ LightManager = ig.Class.extend({
     	for (var lightIndex = 0; lightIndex < this.lights.length; lightIndex++) {
     		var light = this.lights[lightIndex];
     	
-    		// BUGFIX: hier lokalte radius variable nehmen, wenn die nicht richtig benutzt wird. 
     		var localRadius = light.radius + (Math.sin(this.pulseAngle) * light.pulseFactor);
     		this.shadowCtx.save();
     		this.lightCtx.save();
