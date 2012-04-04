@@ -76,7 +76,9 @@ init: function(x,y,settings) {
 	125,  // angle spread
 	80,  // radius
 	'rgba(255,255,255,0.1)', //color
-	5  	  // pulse factor
+	5,  	  // pulse factor
+	{x:0,y:5},  	  // offset (from the middle of the entity)
+
 	);
 
 }
