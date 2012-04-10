@@ -48,9 +48,9 @@ EntityPlayer = ig.Entity.extend({
 			radius: 80,			
 			color:'rgba(255,255,255,0.1)',	// there is an extra shadowColor option
 			useGradients: true,	// false will use color/ shadowColor
-			shadowGradientStart: 'rgba(0,0,0,0.1)',			// 2-stop circular gradient at 0.0 and 1.0
+			shadowGradientStart: 'rgba(0,0,0,0.1)',			// 2-stop radial gradient at 0.0 and 1.0
 			shadowGradientStop: 'rgba(0,0,0,0.1)',
-			lightGradientStart: 'rgba(255,255,100,0.1)',	// 2-stop circular gradient at 0.0 and 1.0
+			lightGradientStart: 'rgba(255,255,100,0.1)',	// 2-stop radial gradient at 0.0 and 1.0
 			lightGradientStop: 'rgba(0,0,0,0.6)',
 			pulseFactor: 5,
 			lightOffset: {x:0,y:0}		// lightsource offset from the middle of the entity

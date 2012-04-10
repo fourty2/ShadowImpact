@@ -1,14 +1,14 @@
 ShadowImpact
 ============
 
-This is a lighting class for  [ImpactJS](http://www.impactjs.com) to provide a simple shadow casting engine.
+This is a simple shadow casting/ lighting plugin for  [ImpactJS](http://www.impactjs.com).
 
 Features
 --------
 
  * dynamic light sources for multiple entities
  * pulsating shine (torch style)
- * configurable colors
+ * configurable colors including radial gradients
  * configurable light source offset
  * separate drawing methods for darkening layer and light layer 
 
@@ -16,18 +16,24 @@ Features
 Example
 -------
 
-a simple proof of concept is available here:
-http://coldspace.henklein.com/
+To use the example, copy and overwrite the example files into an existing Jump'n'Run Demo directory
+I provided only the Jump'n'Run Demo JS files without the media files or the impact framework.
 
+For more Information about ImpactJS and the Jump'n'Run Demo see http://www.impactjs.com
+
+Example Image
+-------------
+
+![](http://coldspace.henklein.com/v020_screenshot.png)
 
 Installation
 ------------
-* copy the light.js into your game folder
-* register the class in your main.js:
+* copy the plugins folder into your lib folder
+* register the plugin in your main.js:
 
 ```
 .requires(
-	'game.light'
+	'plugins.lights'
 )
 ```
 
@@ -37,7 +43,7 @@ Installation
 MyGame = ig.Game.extend({
 	lightManager: '',
 	init: function() {
-	this.lightManager = new LightManager();
+	this.lightManager = new ig.LightManager();
 }
 ```
 
@@ -75,15 +81,19 @@ Lets add a light to our Player:
 ```
 init: function(x,y,settings) {
 ...
-	this.light = ig.game.lightManager.addLight (this,  // entity
- 	5, 	  // starting angle
-	125,  // angle spread
-	80,  // radius
-	'rgba(255,255,255,0.1)', //color
-	5,  	  // pulse factor
-	{x:0,y:5},  	  // offset (from the middle of the entity)
-
-	);
+	this.light = ig.game.lightManager.addLight(this, {
+			angle: 5,	
+			angleSpread: 125,	
+			radius: 80,			
+			color:'rgba(255,255,255,0.1)',	// there is an extra shadowColor option
+			useGradients: true,	// false will use color/ shadowColor
+			shadowGradientStart: 'rgba(0,0,0,0.1)',			// 2-stop radial gradient at 0.0 and 1.0
+			shadowGradientStop: 'rgba(0,0,0,0.1)',
+			lightGradientStart: 'rgba(255,255,100,0.1)',	// 2-stop radial gradient at 0.0 and 1.0
+			lightGradientStop: 'rgba(0,0,0,0.6)',
+			pulseFactor: 5,
+			lightOffset: {x:0,y:0}		// lightsource offset from the middle of the entity
+		});
 
 }
 ```
@@ -102,3 +112,17 @@ update: function() {
 	}
 }
 ```
+
+Changelog
+---------
+
+v0.20
+* improved canvas drawing
+* added gradients
+* provided example within the repo
+
+v0.11
+* added removeLight method
+
+v0.10
+* initial commit
