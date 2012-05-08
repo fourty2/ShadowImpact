@@ -28,8 +28,10 @@ MyGame = ig.Game.extend({
 		ig.input.bind( ig.KEY.C, 'shoot' );
 
 		// initialize our lightmanager, 
-		// the base background color can be added as a optional constructor parameter 
-		this.lightManager = new ig.LightManager('rgba(0,0,0,0.8)');
+		// the base background color can be added as a optional constructor parameter
+		// be sure to add then also the  value array of this color. this is used to paint the background correctly
+		 
+		this.lightManager = new ig.LightManager('rgba(0,0,0,0.8)', [0,0,0, 255 * 0.8]);
 
 		// Load the LevelTest as required above ('game.level.test')
 		this.loadLevel( LevelTest );

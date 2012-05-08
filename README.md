@@ -12,6 +12,14 @@ Features
  * configurable light source offset
  * separate drawing methods for darkening layer and light layer 
 
+Discussion
+----------
+
+There is a discussion thread on: http://impactjs.com/forums/code/lighting-shadow-casting-class
+
+Notes
+-----
+ * in v.0.30 the shadowGradient doesn't take any effect
 
 Example
 -------
@@ -20,6 +28,8 @@ To use the example, copy and overwrite the example files into an existing Jump'n
 I provided only the Jump'n'Run Demo JS files without the media files or the impact framework.
 
 For more Information about ImpactJS and the Jump'n'Run Demo see http://www.impactjs.com
+
+A working example is available at: http://coldspace.henklein.com/plugin_demo/
 
 Example Image
 -------------
@@ -115,6 +125,11 @@ update: function() {
 
 Changelog
 ---------
+
+v0.30
+* rewrite of the canvas drawing method - no globalCompositeOperation anymore ( https://github.com/fourty2/ShadowImpact/issues/1 )
+* rewrite of the raycasting "engine" - it's much more accurate
+
 
 v0.20
 * improved canvas drawing
