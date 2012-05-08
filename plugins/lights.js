@@ -1,8 +1,8 @@
 /**
     Dynamic Shadow Casting for ImpactJS (http://www.impactjs.com)
 
-    @version 0.30
-    @date 2012-05-07
+    @version 0.31
+    @date 2012-05-08
     @author Marc Henklein ( @snooze82, snooze82@gmail.com )
 
     see https://github.com/fourty2/ShadowImpact for more information
@@ -35,7 +35,7 @@ ig.LightManager = ig.Class.extend({
     lightLayer: null, // canvas and context for light map
     lightCtx: null, 
     baseColor: 'rgba(0,0,0,0.6)', // default shadow color
-    basecolorValues: [0,0,0,0.6], // array with base color values
+    basecolorValues: [0,0,0, 255 * 0.6], // array with base color values
     pulseAngle: 0,
     vector: function(_x,_y){
         this.x = _x;

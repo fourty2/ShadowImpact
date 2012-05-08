@@ -126,6 +126,9 @@ update: function() {
 Changelog
 ---------
 
+v0.31
+* minor default settings bugfix
+
 v0.30
 * rewrite of the canvas drawing method - no globalCompositeOperation anymore ( https://github.com/fourty2/ShadowImpact/issues/1 )
 * rewrite of the raycasting "engine" - it's much more accurate
