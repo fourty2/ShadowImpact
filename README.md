@@ -123,6 +123,15 @@ update: function() {
 }
 ```
 
+Support ShadowImpact Development
+--------------------------------
+
+[![Donate to author](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MYAEE67FSBTP6)
+
+
+[![flattr this plugin](https://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=snooze&url=https://github.com/fourty2/ShadowImpact)
+
+
 Changelog
 ---------
 
