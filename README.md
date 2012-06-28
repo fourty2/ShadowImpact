@@ -66,13 +66,12 @@ update: function() {
 }
 ```
 
-* add the Lighting Draw calls to the impact.js lib/impact/game.js around the entitydrawing ( or somewhere else )
+* add the Lighting Draw calls to your main.js
 
 ```
-draw: function() {
-	...
+drawEntities: function() {
 	this.lightManager.drawLightMap();
-	this.drawEntities();
+	this.parent();
  	this.lightManager.drawShadowMap();
 }
 ```
